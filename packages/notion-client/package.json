@@ -3,7 +3,7 @@
   "version": "7.4.3",
   "type": "module",
   "description": "Robust TypeScript client for the unofficial Notion API.",
-  "repository": "NotionX/react-notion-x",
+  "repository": "rimonhanna/react-notion-x",
   "author": "Travis Fischer <travis@transitivebullsh.it>",
   "license": "MIT",
   "main": "./build/index.js",
@@ -24,7 +24,10 @@
     "test": "run-s test:*",
     "test:lint": "eslint .",
     "test:typecheck": "tsc --noEmit",
-    "test:unit": "vitest run"
+    "test:unit": "vitest run",
+    "release:patch": "npm version patch && npm publish --access public",
+    "release:minor": "npm version minor && npm publish --access public",
+    "release:major": "npm version major && npm publish --access public"
   },
   "dependencies": {
     "ky": "catalog:",
