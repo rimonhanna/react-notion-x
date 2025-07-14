@@ -312,6 +312,7 @@ export function convertBlock({
       break
 
     case 'child_database':
+      compatBlock.type = 'collection_view'
       // TODO
       break
 
