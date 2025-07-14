@@ -154,6 +154,10 @@ catalogs:
 importers:
 
   .:
+    dependencies:
+      '@notionhq/client':
+        specifier: 'catalog:'
+        version: 2.3.0
     devDependencies:
       '@fisch0920/config':
         specifier: 'catalog:'
@@ -318,6 +322,9 @@ importers:
       ky:
         specifier: 'catalog:'
         version: 1.8.1
+      notion-compat:
+        specifier: workspace:*
+        version: link:../notion-compat
       notion-types:
         specifier: workspace:*
         version: link:../notion-types
@@ -327,6 +334,13 @@ importers:
       p-map:
         specifier: 'catalog:'
         version: 7.0.3
+      p-queue:
+        specifier: 'catalog:'
+        version: 8.1.0
+    devDependencies:
+      '@notionhq/client':
+        specifier: 'catalog:'
+        version: 2.3.0
 
   packages/notion-compat:
     dependencies:

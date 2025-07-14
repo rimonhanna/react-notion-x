@@ -1,3 +1,4 @@
+import { Client } from '@notionhq/client'
 import { expect, test } from 'vitest'
 
 import { NotionAPI } from './notion-api'
@@ -32,8 +33,8 @@ for (const pageId of pageIdFixturesSuccess) {
       timeout: 60_000 // one minute timeout
     },
     async () => {
-      const api = new NotionAPI()
-      const page = await api.getPage(pageId, { throwOnCollectionErrors: true })
+      const api = new NotionAPI(new Client({}))
+      const page = await api.getPage(pageId)
 
       expect(page).toBeTruthy()
       expect(page.block).toBeTruthy()
@@ -43,7 +44,7 @@ for (const pageId of pageIdFixturesSuccess) {
 
 for (const pageId of pageIdFixturesFailure) {
   test(`NotionAPI.getPage failure ${pageId}`, async () => {
-    const api = new NotionAPI()
+    const api = new NotionAPI(new Client({}))
     await expect(() => api.getPage(pageId)).rejects.toThrow()
   })
 }

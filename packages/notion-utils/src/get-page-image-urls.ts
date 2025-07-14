@@ -76,7 +76,7 @@ export const getPageImageUrls = (
     })
     .filter(Boolean)
     .map(({ block, url }) => mapImageUrl(url, block))
-    .filter(Boolean)
+    .filter((url): url is string => !!url)
 
   return Array.from(new Set(imageUrls))
 }

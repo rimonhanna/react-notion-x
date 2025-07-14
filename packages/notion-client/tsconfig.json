@@ -1,7 +1,12 @@
 {
   "extends": "../../tsconfig",
   "compilerOptions": {
-    "outDir": "build"
+    "outDir": "build",
+    "paths": {
+      "notion-types": ["../notion-types/src"],
+      "notion-compat": ["../notion-compat/src"],
+      "notion-utils": ["../notion-utils/src"]
+    }
   },
   "include": ["src", "*.config.ts"]
 }

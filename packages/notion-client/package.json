@@ -28,8 +28,16 @@
   },
   "dependencies": {
     "ky": "catalog:",
-    "notion-types": "workspace:*",
     "notion-utils": "workspace:*",
-    "p-map": "catalog:"
+    "p-map": "catalog:",
+    "notion-types": "workspace:*",
+    "notion-compat": "workspace:*",
+    "p-queue": "catalog:"
+  },
+  "devDependencies": {
+    "@notionhq/client": "catalog:"
+  },
+  "peerDependencies": {
+    "@notionhq/client": "^2.2.0"
   }
 }
