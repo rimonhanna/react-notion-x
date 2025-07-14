@@ -562,7 +562,6 @@ export class NotionAPI {
         }
       }
 
-      const reducerLabel = isBoardType ? 'board_columns' : `${type}_groups`
       loader = {
         type: 'reducer',
         reducers: {
