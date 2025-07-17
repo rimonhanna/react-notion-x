@@ -54,6 +54,7 @@ export interface ExtendedRecordMap extends RecordMap {
 
   // optional map of preview images
   preview_images?: PreviewImageMap
+  embeddedFormsBaseUrl?: string
 }
 
 export interface PageChunk {
