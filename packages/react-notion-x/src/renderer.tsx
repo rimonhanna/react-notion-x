@@ -34,6 +34,7 @@ export function NotionRenderer({
   defaultPageIcon,
   defaultPageCover,
   defaultPageCoverPosition,
+  notionSiteUrl,
   ...rest
 }: {
   recordMap: ExtendedRecordMap
@@ -66,6 +67,8 @@ export function NotionRenderer({
   defaultPageIcon?: string
   defaultPageCover?: string
   defaultPageCoverPosition?: number
+
+  notionSiteUrl?: string
 
   className?: string
   bodyClassName?: string
@@ -117,6 +120,7 @@ export function NotionRenderer({
       defaultPageCover={defaultPageCover}
       defaultPageCoverPosition={defaultPageCoverPosition}
       zoom={isImageZoomable ? zoom : null}
+      notionSiteUrl={notionSiteUrl}
     >
       <NotionBlockRenderer {...rest} />
     </NotionContextProvider>
