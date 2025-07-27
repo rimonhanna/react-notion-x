@@ -54,8 +54,7 @@ export class NotionAPI {
       throwOnCollectionErrors = false,
       collectionReducerLimit = 999,
       fetchRelationPages = false,
-      kyOptions,
-      embeddedFormsBaseUrl
+      kyOptions
     }: {
       concurrency?: number
       fetchMissingBlocks?: boolean
@@ -67,7 +66,6 @@ export class NotionAPI {
       collectionReducerLimit?: number
       fetchRelationPages?: boolean
       kyOptions?: KyOptions
-      embeddedFormsBaseUrl?: string
     } = {}
   ): Promise<notion.ExtendedRecordMap> {
     const page = await this.getPageRaw(pageId, {
@@ -227,10 +225,6 @@ export class NotionAPI {
     if (fetchRelationPages) {
       const newBlocks = await this.fetchRelationPages(recordMap, kyOptions)
       recordMap.block = { ...recordMap.block, ...newBlocks }
-    }
-
-    if (embeddedFormsBaseUrl) {
-      recordMap.embeddedFormsBaseUrl = embeddedFormsBaseUrl
     }
 
     return recordMap

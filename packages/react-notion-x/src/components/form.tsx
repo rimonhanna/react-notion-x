@@ -1,15 +1,15 @@
 export function Form({
   block,
-  embeddedFormsBaseUrl
+  notionSiteUrl
 }: {
   block: any
-  embeddedFormsBaseUrl: string
+  notionSiteUrl: string
 }) {
   const formId = block?.id?.replace(/-/g, '')
   return (
     <iframe
       className='notion-form-iframe'
-      src={`${embeddedFormsBaseUrl}/ebd/${formId}`}
+      src={`${notionSiteUrl}/ebd/${formId}`}
       width='100%'
       height='600'
       allowFullScreen

@@ -36,6 +36,8 @@ export interface NotionContext {
   linkTableTitleProperties: boolean
   isLinkCollectionToUrlProperty: boolean
 
+  notionSiteUrl?: string
+
   defaultPageIcon?: string | null
   defaultPageCover?: string | null
   defaultPageCoverPosition?: number
@@ -63,6 +65,8 @@ export interface PartialNotionContext {
   showCollectionViewDropdown?: boolean
   linkTableTitleProperties?: boolean
   isLinkCollectionToUrlProperty?: boolean
+
+  notionSiteUrl?: string
 
   showTableOfContents?: boolean
   minTableOfContentsItems?: number
@@ -151,8 +155,7 @@ const defaultNotionContext: NotionContext = {
     collection_view: {},
     collection_query: {},
     notion_user: {},
-    signed_urls: {},
-    embeddedFormsBaseUrl: ''
+    signed_urls: {}
   },
 
   components: defaultComponents,

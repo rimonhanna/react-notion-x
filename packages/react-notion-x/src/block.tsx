@@ -72,7 +72,8 @@ export function Block(props: BlockProps) {
     minTableOfContentsItems,
     defaultPageIcon,
     defaultPageCover,
-    defaultPageCoverPosition
+    defaultPageCoverPosition,
+    notionSiteUrl
   } = ctx
 
   const [activeSection, setActiveSection] = React.useState<string | null>(null)
@@ -800,13 +801,8 @@ export function Block(props: BlockProps) {
         return null
       }
 
-      if ((linkedBlock as types.FormBlock)?.type === 'form') {
-        return (
-          <Form
-            block={linkedBlock}
-            embeddedFormsBaseUrl={recordMap.embeddedFormsBaseUrl}
-          />
-        )
+      if ((linkedBlock as types.FormBlock)?.type === 'form' && notionSiteUrl) {
+        return <Form block={linkedBlock} notionSiteUrl={notionSiteUrl} />
       }
 
       return (
